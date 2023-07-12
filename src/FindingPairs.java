@@ -17,5 +17,15 @@ public class FindingPairs {
     *   prices = {5, 15, 25, 35, 45};
     *   target = 40;
     *   expectedOutput = {1, 2};
+    *
+    * Logic: Traverse the array and, on each iteration, calculate the number that complements the current
+    *   number so that their sum is equal to the target. If the complement does not exist in the map, add it
+    *   to the map, if it exists, we reached the answer!
+    *   get the value corresponding to the complement and store it in the array as the first entry, then add the
+    *   current index to the array as the second element.
     * */
+
+    public static int[] findProductIndices(int[] prices, int target){
+
+    }
 }
