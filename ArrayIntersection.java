@@ -17,5 +17,10 @@ public class ArrayIntersection {
     *   dataset1 = {1, 2, 3, 4, 5};
     *   dataset2 = {6, 7, 8, 9, 10};
     *   expectedOutput = {};
+    *
+    * Logic: Traverse the first array and store the IDs as keys and the frequency of each ID as the value
+    *   Traverse the second array and update add the new keys or update the frequencies of the existent keys.
+    *   Store the IDs with frequency > 1 in an third array and returned.
+    *
     * */
 }
