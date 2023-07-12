@@ -16,6 +16,12 @@ public class ZeroMovement {
     *   [4, 5, 3, 0, 0, 0]
     *
     * Logic: Traverse the array and left-shift the array when a zero is found.
+    *   We need counter to keep track of number of elements found that are NOT zero, so we can efficiently
+    *   pad the array with zeros at the end. This will save us from using two for/while loops.
     *
     * */
+
+    public static int[] moveZerosToEnd(int[] nums){
+
+    }
 }
