@@ -24,5 +24,17 @@ public class ArrayRotation {
     //  i.e: n = 5, size = 3 --> nRotations = 5%3 = 2
     public static int[] shiftArray(int[] arr, int n){
 
+        int size = arr.length;
+        int nRotations = n % size;
+
+        for(int i = 0; i < n; i++){
+            int last = arr[size-1]; // keep the last element
+            for(int j = size-1; j > 0; j--){
+                arr[j] = arr[j-1];
+            }
+            arr[0] = last; // Replace the first element of the array with the last.
+        }
+
+        return arr;
     }
 }
