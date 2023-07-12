@@ -15,6 +15,7 @@ public class ZeroMovement {
     *   int[] nums = {4, 0, 5, 0, 3, 0};
     *   [4, 5, 3, 0, 0, 0]
     *
+    * Logic: Traverse the array and left-shift the array when a zero is found.
     *
     * */
 }
