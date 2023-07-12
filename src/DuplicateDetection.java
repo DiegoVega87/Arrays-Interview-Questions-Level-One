@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class DuplicateDetection {
 
     /*
@@ -24,6 +27,16 @@ public class DuplicateDetection {
      * */
     public static boolean hasDuplicate(int[] arr){
 
+        //Data structures that does not accept duplicates.
+        Set<Integer> products = new HashSet<>();
 
+        for(int product : arr){
+            // if product is not added, it is a duplicate
+            if(!products.add(product)){
+                return true;
+            }
+        }
+
+        return false;
     }
 }
