@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DecrementLargeIntegers {
 
     /*
@@ -22,6 +24,26 @@ public class DecrementLargeIntegers {
     * Logic: Convert the array content into a number, subtract 1 and convert it back into an array.
     * */
 
+    public static int[] decrementLargeInteger(int[] arr){
 
+        int number = 0;
+        int multiplier = 1;
+
+        for(int i = arr.length-1; i >= 0; i--){
+            number += multiplier * arr[i];
+            multiplier*=10;
+        }
+
+        number = number-1;
+
+        int[] sol = new int[arr.length];
+        int index = sol.length-1;
+        while (number > 0){
+            sol[index--] = number%10;
+            number /= 10;
+        }
+
+        return  sol;
+    }
 
 }
