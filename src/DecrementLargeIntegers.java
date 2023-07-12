@@ -18,5 +18,10 @@ public class DecrementLargeIntegers {
     * Example 3:
     *   int[] arr = {1, 0, 0, 0};
     *   result should be {0, 9, 9, 9}
+    *
+    * Logic: Convert the array content into a number, subtract 1 and convert it back into an array.
     * */
+
+
+
 }
