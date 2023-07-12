@@ -15,13 +15,33 @@ public class ZeroMovement {
     *   int[] nums = {4, 0, 5, 0, 3, 0};
     *   [4, 5, 3, 0, 0, 0]
     *
-    * Logic: Traverse the array and left-shift the array when a zero is found.
-    *   We need counter to keep track of number of elements found that are NOT zero, so we can efficiently
-    *   pad the array with zeros at the end. This will save us from using two for/while loops.
+    * Logic: Use two pointers approach to find and swap the next non-zero element with the first previous
+    *   zero element.
+    *   Case 1: Both prev and next point to a zero element. Advance next.
+    *   Case 2: Previous pointer points to zero element and next pointer points to non-zero element.
+    *       Swap and advance both;
+    *   Case 3: Either both point to non-zero elements or previous points to a non-zero element.
+    *       Advance both pointers.
+    *
+    *
     *
     * */
 
-    public static int[] moveZerosToEnd(int[] nums){
+    public static void moveZerosToEnd(int[] nums){
+        int prev = 0;
+        int next = 1;
+
+        while(next < nums.length){
+            if(nums[prev] == 0 && nums[next] == 0){
+                next++;
+            } else if (nums[prev] == 0 && nums[next]!= 0) {
+                nums[prev++] = nums[next];
+                nums[next++] = 0;
+            }else{
+                prev++;
+                next++;
+            }
+        }
 
     }
 }
