@@ -15,6 +15,11 @@ public class DuplicateDetection {
     *   arr = {1, 2, 3, 4, 5, 1};
     *   result = true
     *
+    * Logic: Go element by element and return true when one has already been seen. False otherwise.
+    *
+    * Brute force approach:  Two for loops to compare each element with all the other elements O(n^2)
+    * A more efficient approach would be to use a data structure that does not accept duplicates
+    * without having to compare all the numbers one by one.
     *
      * */
     public static boolean hasDuplicate(int[] arr){
