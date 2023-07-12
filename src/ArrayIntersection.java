@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class ArrayIntersection {
 
     /*
@@ -23,4 +25,28 @@ public class ArrayIntersection {
     *   Store the IDs with frequency > 1 in an third array and returned.
     *
     * */
+
+    public static int[] commonCustomers(int[] dataset1, int[] dataset2){
+        Map<Integer, Integer> IDs = new HashMap<>();
+        List<Integer> solution = new ArrayList<>();
+        int frequency;
+
+        for(int id : dataset1){
+             frequency = IDs.getOrDefault(id, 0);
+             IDs.put(id,frequency+1);
+        }
+
+        for(int id : dataset2){
+            frequency = IDs.getOrDefault(id, 0);
+            IDs.put(id,frequency+1);
+        }
+
+        for(Integer key : IDs.keySet()){
+            if(IDs.get(key) > 1){
+                solution.add(key);
+            }
+        }
+
+        return solution.stream().mapToInt(i -> i).toArray();
+    }
 }
