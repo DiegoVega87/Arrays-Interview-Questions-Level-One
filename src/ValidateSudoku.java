@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class ValidateSudoku {
 
     /*
@@ -35,10 +38,25 @@ public class ValidateSudoku {
     *
     *   expectedOutput = false;
     *
-    * First approach:
-    *   -> Outer for loop to traverse each row,
-    *   -> inner for loop to traverse each column
-    *   -> inner-inner for loop to compare each column with all the numbers in the same row to check for duplicates
+    * Logic: Traverse the board, use a set to add each column in the row (ignoring 0s). If a number is not added, the
+    *   board is not valid.
     *
     * */
+
+    public static boolean isValidSudoku(int[][] board){
+
+
+        for(int row = 0; row < board.length; row++){
+            Set<Integer> set = new HashSet<>();
+            for(int column = 0; column < board.length; column++) {
+                if(board[row][column] != 0){
+                    if(!set.add(board[row][column])){
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
 }
