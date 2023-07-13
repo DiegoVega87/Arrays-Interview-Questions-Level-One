@@ -11,5 +11,9 @@ public class FlipImage {
     * Example 2:
     *   image = {{1, 2}, {3, 4}};
     *   expectedOutput = {{4, 3}, {2, 1}};
+    *
+    * Logic: Start swapping from the corners to the innermost number, until we get to the middle.
      * */
+
+
 }
