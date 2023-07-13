@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class FindingPairs {
 
     /*
@@ -19,13 +23,31 @@ public class FindingPairs {
     *   expectedOutput = {1, 2};
     *
     * Logic: Traverse the array and, on each iteration, calculate the number that complements the current
-    *   number so that their sum is equal to the target. If the complement does not exist in the map, add it
-    *   to the map, if it exists, we reached the answer!
+    *   number so that their sum is equal to the target. If the complement does not exist in the map, add the
+    *   current value to the map as the key and its index as the value. If it exists, we reached the answer!
     *   get the value corresponding to the complement and store it in the array as the first entry, then add the
     *   current index to the array as the second element.
     * */
 
+
     public static int[] findProductIndices(int[] prices, int target){
 
+        // Create and initialize array that will contain the desired indexes if the solution is plausible.
+        int[] index = {-1,-1};
+
+        Map<Integer,Integer> map = new HashMap<>();
+
+        for(int i = 0; i < prices.length;i++){
+            int complement = target - prices[i];
+            if(!map.containsKey(complement)){
+                map.put(prices[i], i);
+            }else{
+                index[0] = map.get(complement);
+                index[1] = i;
+                break; // Stop looping, we have the answer!
+            }
+        }
+
+        return index;
     }
 }
