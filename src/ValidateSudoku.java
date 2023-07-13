@@ -35,5 +35,10 @@ public class ValidateSudoku {
     *
     *   expectedOutput = false;
     *
+    * First approach:
+    *   -> Outer for loop to traverse each row,
+    *   -> inner for loop to traverse each column
+    *   -> inner-inner for loop to compare each column with all the numbers in the same row to check for duplicates
+    *
     * */
 }
